@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>redis-rails by redis-store</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">redis-rails</h1>
+        <p class="header">Redis stores for Ruby on Rails</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/redis-store/redis-rails/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/redis-store/redis-rails/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/redis-store/redis-rails">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/redis-store">redis-store</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a name="redis-stores-for-ruby-on-rails" class="anchor" href="#redis-stores-for-ruby-on-rails"><span class="octicon octicon-link"></span></a>Redis stores for Ruby on Rails</h1>
+
+<p><strong><code>redis-rails</code></strong> provides a full set of stores (*Cache*, <em>Session</em>, <em>HTTP Cache</em>) for <strong>Ruby on Rails</strong>. See the main <a href="https://github.com/redis-store/redis-store">redis-store readme</a> for general guidelines.</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<div class="highlight"><pre><span class="c1"># Gemfile</span>
+<span class="n">gem</span> <span class="s1">'redis-rails'</span> <span class="c1"># Will install several other redis-* gems</span>
+</pre></div>
+
+<h3>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h3>
+
+<div class="highlight"><pre><span class="c1"># config/application.rb</span>
+<span class="n">config</span><span class="o">.</span><span class="n">cache_store</span> <span class="o">=</span> <span class="ss">:redis_store</span><span class="p">,</span> <span class="s1">'redis://localhost:6379/0/cache'</span><span class="p">,</span> <span class="p">{</span> <span class="n">expires_in</span><span class="p">:</span> <span class="mi">90</span><span class="o">.</span><span class="n">minutes</span> <span class="p">}</span>
+</pre></div>
+
+<p>Configuration values at the end are optional. If you want to use Redis as a backend for sessions, you will also need to set:</p>
+
+<div class="highlight"><pre><span class="c1"># config/initializers/session_store.rb</span>
+<span class="ss">MyApplication</span><span class="p">:</span><span class="ss">:Application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">session_store</span> <span class="ss">:redis_store</span>
+</pre></div>
+
+<p>And if you would like to use Redis as a rack-cache backend for HTTP caching:</p>
+
+<div class="highlight"><pre><span class="c1"># config/environments/production.rb</span>
+<span class="n">config</span><span class="o">.</span><span class="n">action_dispatch</span><span class="o">.</span><span class="n">rack_cache</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="ss">metastore</span><span class="p">:</span>   <span class="s1">'redis://localhost:6379/1/metastore'</span><span class="p">,</span>
+  <span class="ss">entitystore</span><span class="p">:</span> <span class="s1">'redis://localhost:6379/1/entitystore'</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2>
+<a name="running-tests" class="anchor" href="#running-tests"><span class="octicon octicon-link"></span></a>Running tests</h2>
+
+<pre lang="shell"><code>gem install bundler
+git clone git://github.com/redis-store/redis-rails.git
+cd redis-rails
+bundle install
+bundle exec rake
+</code></pre>
+
+<p>If you are on <strong>Snow Leopard</strong> you have to run <code>env ARCHFLAGS="-arch x86_64" bundle exec rake</code></p>
+
+<h2>
+<a name="copyright" class="anchor" href="#copyright"><span class="octicon octicon-link"></span></a>Copyright</h2>
+
+<p>(c) 2009 - 2013 Luca Guidi - <a href="http://lucaguidi.com">http://lucaguidi.com</a>, released under the MIT license</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
