@@ -1,19 +1,19 @@
 # Redis stores for Ruby on Rails
 
-__`redis-rails`__ provides a full set of stores (*Cache*, *Session*, *HTTP Cache*) for __Ruby on Rails__. See the main [redis-store readme](https://github.com/jodosha/redis-store) for general guidelines.
+__`redis-rails`__ provides a full set of stores (*Cache*, *Session*, *HTTP Cache*) for __Ruby on Rails__. See the main [redis-store readme](https://github.com/redis-store/redis-store) for general guidelines.
 
 ## Installation
 
 ```ruby
 # Gemfile
-gem 'redis-rails' # Will install several other redis- gems
+gem 'redis-rails' # Will install several other redis-* gems
 ```
 
 ### Usage
 
 ```ruby
 # config/application.rb
-config.cache_store = :redis_store, "redis://localhost:6379/0/cache", { expires_in: 90.minutes }
+config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', { expires_in: 90.minutes }
 ```
 
 Configuration values at the end are optional. If you want to use Redis as a backend for sessions, you will also need to set:
@@ -37,7 +37,7 @@ config.action_dispatch.rack_cache = {
 
 ```shell
 gem install bundler
-git clone git://github.com/jodosha/redis-rails.git
+git clone git://github.com/redis-store/redis-rails.git
 cd redis-rails
 bundle install
 bundle exec rake
