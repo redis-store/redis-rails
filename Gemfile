@@ -1,10 +1,21 @@
 source 'https://rubygems.org'
 gemspec
 
-gem 'redis-store',         '~> 1.1.0', path: '../redis-store'
-gem 'redis-rack',          '~> 1.5.0', path: '../redis-rack'
-gem 'redis-activesupport',    '4.0.0', path: '../redis-activesupport'
-gem 'redis-actionpack',       '4.0.0', path: '../redis-actionpack'
+if ::File.directory?(gem_path = '../redis-store')
+  gem 'redis-store', '~> 1.1.0', path: gem_path
+end
+
+if ::File.directory?(gem_path = '../redis-rack')
+  gem 'redis-rack', '~> 1.5.0', path: gem_path
+end
+
+if ::File.directory?(gem_path = '../redis-activesupport')
+  gem 'redis-activesupport', '~> 4.0.0', path: gem_path
+end
+
+if ::File.directory?(gem_path = '../redis-actionpack')
+  gem 'redis-actionpack', '~> 4.0.0', path: gem_path
+end
 
 version = ENV["RAILS_VERSION"] || "4"
 

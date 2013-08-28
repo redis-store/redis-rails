@@ -9,7 +9,7 @@ __`redis-rails`__ provides a full set of stores (*Cache*, *Session*, *HTTP Cache
 gem 'redis-rails' # Will install several other redis-* gems
 ```
 
-### Usage
+## Usage
 
 ```ruby
 # config/application.rb
@@ -45,6 +45,10 @@ bundle exec rake
 
 If you are on **Snow Leopard** you have to run `env ARCHFLAGS="-arch x86_64" bundle exec rake`
 
+## Status
+
+[![Gem Version](https://badge.fury.io/rb/redis-rails.png)](http://badge.fury.io/rb/redis-rails) [![Build Status](https://secure.travis-ci.org/redis-store/redis-rails.png?branch=master)](http://travis-ci.org/jodosha/redis-rails?branch=master) [![Code Climate](https://codeclimate.com/github/jodosha/redis-store.png)](https://codeclimate.com/github/redis-store/redis-rails)
+
 ## Copyright
 
-(c) 2009 - 2011 Luca Guidi - [http://lucaguidi.com](http://lucaguidi.com), released under the MIT license
+2009 - 2011 Luca Guidi - [http://lucaguidi.com](http://lucaguidi.com), released under the MIT license
