@@ -1,5 +1,5 @@
 class Redis
   module Rails
-    VERSION = '4.0.0'
+    VERSION = '3.2.4'
   end
 end
