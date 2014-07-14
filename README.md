@@ -16,12 +16,15 @@ gem 'redis-rails' # Will install several other redis-* gems
 config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', { expires_in: 90.minutes }
 ```
 
-Configuration values at the end are optional. If you want to use Redis as a backend for sessions, you will also need to set:
+Configuration values at the end are optional. If you want to use Redis as a backend for sessions, you will also need to set. The `redis_server` option must be included if you are overriding the shown default:
 
 ```ruby
 # config/initializers/session_store.rb
-MyApplication::Application.config.session_store :redis_store
+MyApplication::Application.config.session_store :redis_store, {
+  redis_server: Redis::Store::Factory.resolve("redis://localhost:6379/0")
+}
 ```
+
 
 And if you would like to use Redis as a rack-cache backend for HTTP caching:
 
