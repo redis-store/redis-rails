@@ -20,7 +20,29 @@ Configuration values at the end are optional. If you want to use Redis as a back
 
 ```ruby
 # config/initializers/session_store.rb
-MyApplication::Application.config.session_store :redis_store
+MyApplication::Application.config.session_store :redis_store, servers: 'redis://localhost:6379/0/cache'
+```
+
+You can also provide a hash instead of a URL
+
+```ruby
+config.cache_store = :redis_store, { :host => "localhost",
+                                     :port => 6379,
+                                     :db => 0,
+                                     :password => "mysecret",
+                                     :namespace => "cache",
+                                     :expires_in => 90.minutes }
+```
+
+And similarly for the session store:
+
+```ruby
+MyApplication::Application.config.session_store :redis_store, servers: { :host => "localhost",
+                                                                         :port => 6379,
+                                                                         :db => 0,
+                                                                         :password => "mysecret",
+                                                                         :namespace => "cache",
+                                                                         :expires_in => 90.minutes }
 ```
 
 And if you would like to use Redis as a rack-cache backend for HTTP caching:
