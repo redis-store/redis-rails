@@ -41,8 +41,9 @@ MyApplication::Application.config.session_store :redis_store, servers: { :host =
                                                                          :port => 6379,
                                                                          :db => 0,
                                                                          :password => "mysecret",
-                                                                         :namespace => "cache",
-                                                                         :expires_in => 90.minutes }
+                                                                         :namespace => "session"
+                                                                       },
+                                                                       :expires_in => 90.minutes
 ```
 
 And if you would like to use Redis as a rack-cache backend for HTTP caching:
