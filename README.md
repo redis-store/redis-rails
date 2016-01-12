@@ -26,24 +26,24 @@ MyApplication::Application.config.session_store :redis_store, servers: 'redis://
 You can also provide a hash instead of a URL
 
 ```ruby
-config.cache_store = :redis_store, { :host => "localhost",
-                                     :port => 6379,
-                                     :db => 0,
-                                     :password => "mysecret",
-                                     :namespace => "cache",
-                                     :expires_in => 90.minutes }
+config.cache_store = :redis_store, { host: "localhost",
+                                     port: 6379,
+                                     db: 0,
+                                     password: "mysecret",
+                                     namespace: "cache",
+                                     expires_in: 90.minutes }
 ```
 
 And similarly for the session store:
 
 ```ruby
-MyApplication::Application.config.session_store :redis_store, servers: { :host => "localhost",
-                                                                         :port => 6379,
-                                                                         :db => 0,
-                                                                         :password => "mysecret",
-                                                                         :namespace => "session"
+MyApplication::Application.config.session_store :redis_store, servers: { host: "localhost",
+                                                                         port: 6379,
+                                                                         db: 0,
+                                                                         password: "mysecret",
+                                                                         namespace: "session"
                                                                        },
-                                                                       :expires_in => 90.minutes
+                                                                       expires_in: 90.minutes
 ```
 
 And if you would like to use Redis as a rack-cache backend for HTTP caching, add [`redis-rack-cache`](https://github.com/redis-store/redis-rack-cache) to your Gemfile and add:
@@ -51,7 +51,7 @@ And if you would like to use Redis as a rack-cache backend for HTTP caching, add
 ```ruby
 # config/environments/production.rb
 config.action_dispatch.rack_cache = {
-  metastore:   'redis://localhost:6379/1/metastore',
+  metastore: 'redis://localhost:6379/1/metastore',
   entitystore: 'redis://localhost:6379/1/entitystore'
 }
 ```
@@ -76,17 +76,17 @@ sentinel_config = {
 
 # configure cache, merging opts with sentinel conf
 config.cache_store = :redis_store, sentinel_config.merge(
-  :namespace => "cache",
-  :expires_in => 1.days
+  namespace: "cache",
+  expires_in: 1.days
 )
 
 # configure sessions, setting the sentinel config as the
 # servers value, merging opts with the sentinel conf.
 config.session_store :redis_store, {
-  :servers => sentinel_config.merge(
-    :namespace => "sessions"
+  servers: sentinel_config.merge(
+    namespace: "sessions"
   ),
-  :expires_in => 2.days
+  expires_in: 2.days
 }
 ```
 
