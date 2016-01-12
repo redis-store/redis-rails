@@ -6,21 +6,21 @@ __`redis-rails`__ provides a full set of stores (*Cache*, *Session*, *HTTP Cache
 
 ```ruby
 # Gemfile
-gem 'redis-rails' # Will install several other redis-* gems
+gem "redis-rails" # Will install several other redis-* gems
 ```
 
 ## Usage
 
 ```ruby
 # config/application.rb
-config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', { expires_in: 90.minutes }
+config.cache_store = :redis_store, "redis://localhost:6379/0/cache", { expires_in: 90.minutes }
 ```
 
 Configuration values at the end are optional. If you want to use Redis as a backend for sessions, you will also need to set:
 
 ```ruby
 # config/initializers/session_store.rb
-MyApplication::Application.config.session_store :redis_store, servers: 'redis://localhost:6379/0/cache'
+MyApplication::Application.config.session_store :redis_store, servers: "redis://localhost:6379/0/cache"
 ```
 
 You can also provide a hash instead of a URL
@@ -51,8 +51,8 @@ And if you would like to use Redis as a rack-cache backend for HTTP caching, add
 ```ruby
 # config/environments/production.rb
 config.action_dispatch.rack_cache = {
-  metastore: 'redis://localhost:6379/1/metastore',
-  entitystore: 'redis://localhost:6379/1/entitystore'
+  metastore: "redis://localhost:6379/1/metastore",
+  entitystore: "redis://localhost:6379/1/entitystore"
 }
 ```
 

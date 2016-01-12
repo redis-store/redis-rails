@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 describe Redis::Rails do
   it "must require ActiveSupport dependency" do
