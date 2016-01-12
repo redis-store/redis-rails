@@ -46,7 +46,7 @@ MyApplication::Application.config.session_store :redis_store, servers: { :host =
                                                                        :expires_in => 90.minutes
 ```
 
-And if you would like to use Redis as a rack-cache backend for HTTP caching:
+And if you would like to use Redis as a rack-cache backend for HTTP caching, add [`redis-rack-cache`](https://github.com/redis-store/redis-rack-cache) to your Gemfile and add:
 
 ```ruby
 # config/environments/production.rb
