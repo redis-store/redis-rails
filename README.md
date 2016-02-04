@@ -20,7 +20,7 @@ Configuration values at the end are optional. If you want to use Redis as a back
 
 ```ruby
 # config/initializers/session_store.rb
-MyApplication::Application.config.session_store :redis_store, servers: "redis://localhost:6379/0/cache"
+MyApplication::Application.config.session_store :redis_store, servers: "redis://localhost:6379/0/session"
 ```
 
 You can also provide a hash instead of a URL
