@@ -34,12 +34,12 @@ You can also provide a hash instead of a URL
 
 ```ruby
 config.cache_store = :redis_store, { 
-                                     host: "localhost",
-                                     port: 6379,
-                                     db: 0,
-                                     password: "mysecret",
-                                     namespace: "cache"
-                                    }
+  host: "localhost",
+  port: 6379,
+  db: 0,
+  password: "mysecret",
+  namespace: "cache"
+}
 ```
 
 And similarly for the session store:
