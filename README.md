@@ -4,9 +4,16 @@ __`redis-rails`__ provides a full set of stores (*Cache*, *Session*, *HTTP Cache
 
 ## Installation
 
+Add the following to your Gemfile:
+
 ```ruby
-# Gemfile
-gem "redis-rails" # Will install several other redis-* gems
+gem 'redis-rails'
+```
+
+To use with Rails 3.1+, pin the gem to the latest 4.0 version:
+
+```ruby
+gem 'redis-rails', '~> 4'
 ```
 
 ## Usage
