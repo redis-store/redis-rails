@@ -104,8 +104,8 @@ config.session_store :redis_store, {
 gem install bundler
 git clone git://github.com/redis-store/redis-rails.git
 cd redis-rails
-bundle install
-bundle exec rake
+RAILS_VERSION=5.0.1 bundle install
+RAILS_VERSION=5.0.1 bundle exec rake
 ```
 
 If you are on **Snow Leopard** you have to run `env ARCHFLAGS="-arch x86_64" bundle exec rake`
