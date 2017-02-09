@@ -33,7 +33,7 @@ MyApplication::Application.config.session_store :redis_store, servers: "redis://
 You can also provide a hash instead of a URL
 
 ```ruby
-config.cache_store = :redis_store, { 
+config.cache_store = :redis_store, {
   host: "localhost",
   port: 6379,
   db: 0,
@@ -112,8 +112,8 @@ If you are on **Snow Leopard** you have to run `env ARCHFLAGS="-arch x86_64" bun
 
 ## Status
 
-[![Gem Version](https://badge.fury.io/rb/redis-rails.png)](http://badge.fury.io/rb/redis-rails) 
-[![Build Status](https://secure.travis-ci.org/redis-store/redis-rails.png?branch=master)](http://travis-ci.org/redis-store/redis-rails?branch=master) 
+[![Gem Version](https://badge.fury.io/rb/redis-rails.png)](http://badge.fury.io/rb/redis-rails)
+[![Build Status](https://secure.travis-ci.org/redis-store/redis-rails.png?branch=master)](http://travis-ci.org/redis-store/redis-rails?branch=master)
 [![Code Climate](https://codeclimate.com/github/redis-store/redis-rails.png)](https://codeclimate.com/github/redis-store/redis-rails)
 
 ## Copyright
