@@ -20,7 +20,7 @@ gem 'redis-rails', '~> 4'
 
 ```ruby
 # config/application.rb
-config.cache_store = :redis_store, "redis://localhost:6379/0/cache", { expires_in: 90.minutes }
+config.cache_store = :redis_store, "redis://localhost:6379/0/cache", { expire_in: 90.minutes }
 ```
 
 Configuration values at the end are optional. If you want to use Redis as a backend for sessions, you will also need to set:
@@ -51,7 +51,7 @@ MyApplication::Application.config.session_store :redis_store, servers: { host: "
                                                                          password: "mysecret",
                                                                          namespace: "session"
                                                                        },
-                                                                       expires_in: 90.minutes
+                                                                       expire_in: 90.minutes
 ```
 
 And if you would like to use Redis as a rack-cache backend for HTTP caching, add [`redis-rack-cache`](https://github.com/redis-store/redis-rack-cache) to your Gemfile and add:
@@ -85,7 +85,7 @@ sentinel_config = {
 # configure cache, merging opts with sentinel conf
 config.cache_store = :redis_store, sentinel_config.merge(
   namespace: "cache",
-  expires_in: 1.days
+  expire_in: 1.days
 )
 
 # configure sessions, setting the sentinel config as the
@@ -94,7 +94,7 @@ config.session_store :redis_store, {
   servers: sentinel_config.merge(
     namespace: "sessions"
   ),
-  expires_in: 2.days
+  expire_in: 2.days
 }
 ```
 
