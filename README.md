@@ -29,7 +29,7 @@ Configuration values at the end are optional. If you want to use Redis as a back
 
 ```ruby
 # config/initializers/session_store.rb
-MyApplication::Application.config.session_store :redis_store, servers: "redis://localhost:6379/0/session"
+MyApplication::Application.config.session_store :redis_store, servers: ["redis://localhost:6379/0/session"]
 ```
 
 You can also provide a hash instead of a URL
@@ -47,13 +47,18 @@ config.cache_store = :redis_store, {
 And similarly for the session store:
 
 ```ruby
-MyApplication::Application.config.session_store :redis_store, servers: { host: "localhost",
-                                                                         port: 6379,
-                                                                         db: 0,
-                                                                         password: "mysecret",
-                                                                         namespace: "session"
-                                                                       },
-                                                                       expires_in: 90.minutes
+MyApplication::Application.config.session_store :redis_store, {
+  servers: [
+    {
+      host: "localhost",
+      port: 6379,
+      db: 0,
+      password: "mysecret",
+      namespace: "session"
+    },
+  ],
+  expires_in: 90.minutes
+}
 ```
 
 And if you would like to use Redis as a rack-cache backend for HTTP caching, add [`redis-rack-cache`](https://github.com/redis-store/redis-rack-cache) to your Gemfile and add:
@@ -93,9 +98,11 @@ config.cache_store = :redis_store, sentinel_config.merge(
 # configure sessions, setting the sentinel config as the
 # servers value, merging opts with the sentinel conf.
 config.session_store :redis_store, {
-  servers: sentinel_config.merge(
-    namespace: "sessions"
-  ),
+  servers: [
+    sentinel_config.merge(
+      namespace: "sessions"
+    )
+  ],
   expires_in: 2.days
 }
 ```
