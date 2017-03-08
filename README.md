@@ -23,6 +23,8 @@ gem 'redis-rails', '~> 4'
 config.cache_store = :redis_store, "redis://localhost:6379/0/cache", { expires_in: 90.minutes }
 ```
 
+(**NOTE:** The `:expires_in` option can also be written as `:expire_in` and `:expire_after`)
+
 Configuration values at the end are optional. If you want to use Redis as a backend for sessions, you will also need to set:
 
 ```ruby
