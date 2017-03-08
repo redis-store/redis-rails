@@ -17,7 +17,7 @@ if ::File.directory?(gem_path = "../redis-actionpack")
   gem "redis-actionpack", ">= 4.0.0", '< 5.1', path: gem_path
 end
 
-version = ENV["RAILS_VERSION"] || "4"
+version = ENV["RAILS_VERSION"] || '5'
 
 rails = case version
 when "master"
