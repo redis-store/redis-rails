@@ -57,7 +57,7 @@ MyApplication::Application.config.session_store :redis_store, {
       namespace: "session"
     },
   ],
-  expires_in: 90.minutes
+  expire_after: 90.minutes
 }
 ```
 
