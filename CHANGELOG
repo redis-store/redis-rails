@@ -1,5 +1,23 @@
 # Changelog
 
+## 5.0.2
+
+This version drops support for Ruby 1.9.x - no changes have been introduced which
+actively break compatibility, but the gem is no longer tested on these [deprecated](https://www.ruby-lang.org/en/news/2014/01/10/ruby-1-9-3-will-end-on-2015/)
+Ruby versions.
+
+Breaking changes
+
+- None
+
+Added
+
+- None
+
+Fixed
+
+- Allow newer versions of dependencies
+
 ## 5.0.1
 
 Breaking changes
