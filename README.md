@@ -10,12 +10,6 @@ Add the following to your Gemfile:
 gem 'redis-rails'
 ```
 
-To use with Rails 4.0, pin the gem to the latest 4.0 version:
-
-```ruby
-gem 'redis-rails', '~> 4'
-```
-
 ## Usage
 
 ```ruby
