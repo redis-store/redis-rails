@@ -1,3 +1,5 @@
 Gemfile.lock
 *.gem
 tmp/
+gemfiles/*.lock
+gemfiles/vendor
