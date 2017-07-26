@@ -19,6 +19,8 @@ config.cache_store = :redis_store, "redis://localhost:6379/0/cache", { expires_i
 
 (**NOTE:** The `:expires_in` option can also be written as `:expire_in` and `:expire_after`)
 
+To be fault tolerant when redis is not available you can set option `raise_errors` to `false` since `redis-activesupport` [v4.1.4](https://github.com/redis-store/redis-activesupport/commit/d299520fde0aebfa24801f60ebe40a3973fc3164).
+
 Configuration values at the end are optional. If you want to use Redis as a backend for sessions, you will also need to set:
 
 ```ruby
