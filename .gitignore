@@ -3,3 +3,4 @@ Gemfile.lock
 tmp/
 gemfiles/*.lock
 gemfiles/vendor
+stdout
