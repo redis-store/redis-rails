@@ -100,7 +100,7 @@ config.session_store :redis_store, {
       namespace: "sessions"
     )
   ],
-  expires_in: 2.days
+  expire_after: 2.days
 }
 ```
 
