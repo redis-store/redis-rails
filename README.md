@@ -57,6 +57,12 @@ MyApplication::Application.config.session_store :redis_store, {
   key: "_#{Rails.application.class.parent_name.downcase}_session"
 }
 ```
+(**NOTE:** You can not write `:expires_in` or `:expire_in`as a substitute for `:expire_after`.)
+
+For Rails default CookieStore, we use `:expire_after`.
+
+Both CookieStore and RedisStore inherits Rack::Session::Abstract::Persisted.
+It has `:expire_after` option but not `:expires_in`.
 
 And if you would like to use Redis as a rack-cache backend for HTTP caching, add [`redis-rack-cache`](https://github.com/redis-store/redis-rack-cache) to your Gemfile and add:
 
