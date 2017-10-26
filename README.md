@@ -106,6 +106,10 @@ config.session_store :redis_store, {
 }
 ```
 
+## Usage with Redis Cluster
+
+Although there isn't an official redis cluster client for ruby, many teams use a redis cluster proxy. Often, redis cluster proxies do not support the `MULTI` command which might contain keys belonging to different masters. To get around this problem, you can use the `avoid_multi_commands: true` option. This will tell redis store to use the redis gem's `pipelined` feature instead of a `MULTI` command. You should only use this if your redis cluster proxy fails to process `MULTI` commands.
+
 ## Running tests
 
 ```shell
