@@ -58,6 +58,8 @@ MyApplication::Application.config.session_store :redis_store, {
 }
 ```
 
+NOTE: The sessions store uses a global lock to ensure operations are atomic. No atomic guarantees can be made if you're running multiple instances of your app, so it is recommended that you disable this by using the `threadsafe: false` option.
+
 And if you would like to use Redis as a rack-cache backend for HTTP caching, add [`redis-rack-cache`](https://github.com/redis-store/redis-rack-cache) to your Gemfile and add:
 
 ```ruby
