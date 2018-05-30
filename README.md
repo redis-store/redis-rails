@@ -58,6 +58,8 @@ MyApplication::Application.config.session_store :redis_store, {
 }
 ```
 
+NOTE: The sessions store uses a global lock to ensure operations are atomic. No atomic guarantees can be made if you're running multiple instances of your app, so it is recommended that you disable this by using the `threadsafe: false` option.
+
 And if you would like to use Redis as a rack-cache backend for HTTP caching, add [`redis-rack-cache`](https://github.com/redis-store/redis-rack-cache) to your Gemfile and add:
 
 ```ruby
@@ -103,6 +105,10 @@ config.session_store :redis_store, {
   expire_after: 2.days
 }
 ```
+
+## Usage with Redis Cluster
+
+Although there isn't an official redis cluster client for ruby, many teams use a redis cluster proxy. Often, redis cluster proxies do not support the `MULTI` command which might contain keys belonging to different masters. To get around this problem, you can use the `avoid_multi_commands: true` option. This will tell redis store to use the redis gem's `pipelined` feature instead of a `MULTI` command. You should only use this if your redis cluster proxy fails to process `MULTI` commands.
 
 ## Running tests
 
