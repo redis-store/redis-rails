@@ -7,7 +7,7 @@ __`redis-rails`__ provides a full set of stores (*Cache*, *Session*, *HTTP Cache
 Rails 5.2.0 [includes a Redis cache store out of the
 box](https://github.com/rails/rails/pull/31134), so you don't really
 need this gem anymore if you just need to store the fragment cache in
-Redis. Maintenence on the [redis-activesupport](https://github.com/redis-store/redis-activesupport) 
+Redis. Maintenance on the [redis-activesupport](https://github.com/redis-store/redis-activesupport) 
 gem will continue for security and compatibility issues, but we are no longer accepting new
 features. We are still actively maintaining all other gems in the redis-store
 family.
