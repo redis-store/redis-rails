@@ -57,7 +57,7 @@ config.cache_store = :redis_store, {
 ### Session Storage
 
 You can also store your session data in Redis, keeping user-specific
-data isolated, shared, and highly available. Built upon [redis-rack][],
+data isolated, shared, and highly available. Built upon [redis-rack](https://github.com/redis-store/redis-rack),
 we present the session data to the user as a signed/encrypted cookie,
 but we persist the data in Redis.
 
