@@ -1,14 +1,21 @@
 language: ruby
 before_install: gem install bundler
-script: 'bundle exec rake'
+script: bundle exec rake
 rvm:
-  - 2.2
-  - 2.3
-  - 2.4.0
-  - ruby-head
-  - jruby-head
-
+- 2.2
+- 2.3
+- 2.4.0
+- ruby-head
+- jruby-head
 matrix:
   allow_failures:
-    - rvm: jruby-head
-    - rvm: ruby-head
+  - rvm: jruby-head
+  - rvm: ruby-head
+deploy:
+  provider: rubygems
+  api_key:
+    secure: BYM9wq4SEXVsEuOZAiPDJy54giAmtEMjd8ImnuRH1RJ6AcJcS9YMbKd59siH6c866p8ENC0nd/hQaplSQG9yqNCetvbLbRjLfTsR1QpSL83HdP5r9GeLI7K8J4yu93eIGuqt/fDpjle0n1xx93CceTq7kU4vNJOJa5wiRWI8d5Y=
+  gem: redis-rails
+  on:
+    tags: true
+    repo: redis-store/redis-rails
