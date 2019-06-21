@@ -153,7 +153,7 @@ config.session_store :redis_store, {
 You can also specify only a subset of the nodes, and the client will discover the missing ones using the [CLUSTER NODES](https://redis.io/commands/cluster-nodes) command.
 
 ```ruby
-config.cache_store = :redis_store, { cluster: %w[redis://127.0.0.1:7000/0/] }
+config.cache_store = :redis_store, { cluster: %w[redis://127.0.0.1:6379/0/] }
 ```
 
 ## Running tests
