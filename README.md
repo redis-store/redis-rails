@@ -150,11 +150,11 @@ config.session_store :redis_store, {
 
 ## Usage with Redis Cluster
 
-Since there is no  official Redis Cluster client for Ruby, teams can
-choose to use the Redis Cluster Proxy or the `RedisCluster` client
-available at https://github.com/antirez/redis-rb-cluster. We provide an
-option called `:avoid_multi_commands`, which can be set to `true` in
-order to avoid errors associated with reading from clusters.
+You can also specify only a subset of the nodes, and the client will discover the missing ones using the [CLUSTER NODES](https://redis.io/commands/cluster-nodes) command.
+
+```ruby
+config.cache_store = :redis_store, { cluster: %w[redis://127.0.0.1:6379/0/] }
+```
 
 ## Running tests
 
