@@ -1,5 +1,22 @@
 # Changelog
 
+## 5.1.0
+
+This version allows for support of Rails 6. Allowing redis-activesupport version
+6.
+
+Breaking changes
+
+- None
+
+Added
+
+- None
+
+Fixed
+
+- Allow newer versions of dependencies
+
 ## 5.0.2
 
 This version drops support for Ruby 1.9.x - no changes have been introduced which
