@@ -7,7 +7,7 @@ __`redis-rails`__ provides a full set of stores (*Cache*, *Session*, *HTTP Cache
 Rails 5.2.0 [includes a Redis cache store out of the
 box](https://github.com/rails/rails/pull/31134), so you don't really
 need this gem anymore if you just need to store the fragment cache in
-Redis. Maintenance on the [redis-activesupport](https://github.com/redis-store/redis-activesupport) 
+Redis. Maintenance on the [redis-activesupport](https://github.com/redis-store/redis-activesupport)
 gem will continue for security and compatibility issues, but we are no longer accepting new
 features. We are still actively maintaining all other gems in the redis-store
 family.
@@ -69,7 +69,9 @@ MyApplication::Application.config.session_store :redis_store,
   servers: ["redis://localhost:6379/0/session"],
   expire_after: 90.minutes,
   key: "_#{Rails.application.class.parent_name.downcase}_session",
-  threadsafe: false
+  threadsafe: true,
+  signed: true,
+  secure: true
 ```
 
 A brief run-down of these options...
@@ -83,6 +85,11 @@ A brief run-down of these options...
   this to `false` if you want to disable the global mutex lock on
   session data. It's `true` by default, meaning the mutex will be
   enabled.
+- **signed** uses signed/encrypted cookies to store the local session on
+  a client machine, preventing a malicious user from tampering with its
+  contents.
+- **secure** ensures HTTP cookies are transferred from server to client
+  on a secure (HTTPS) connection
 
 ### HTTP Caching
 
