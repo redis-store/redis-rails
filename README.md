@@ -90,6 +90,7 @@ A brief run-down of these options...
   contents.
 - **secure** ensures HTTP cookies are transferred from server to client
   on a secure (HTTPS) connection
+- **httponly** ensures that all cookies have the HttpOnly flag set to true
 
 ### HTTP Caching
 
