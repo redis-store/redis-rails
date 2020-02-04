@@ -7,10 +7,15 @@ __`redis-rails`__ provides a full set of stores (*Cache*, *Session*, *HTTP Cache
 Rails 5.2.0 [includes a Redis cache store out of the
 box](https://github.com/rails/rails/pull/31134), so you don't really
 need this gem anymore if you just need to store the fragment cache in
-Redis. Maintenance on the [redis-activesupport](https://github.com/redis-store/redis-activesupport)
-gem will continue for security and compatibility issues, but we are no longer accepting new
-features. We are still actively maintaining all other gems in the redis-store
-family.
+Redis. Maintenance on the
+[redis-activesupport](https://github.com/redis-store/redis-activesupport)
+gem will continue for security and compatibility issues, but we are no
+longer accepting new features. We are still actively maintaining all
+other gems in the redis-store family, such as
+[redis-actionpack](https://github.com/redis-store/redis-actionpack)
+for session management, and
+[redis-rack-cache](https://github.com/redis-store/redis-rack-cache)
+for HTTP cache storage.
 
 ## Installation
 
@@ -55,6 +60,10 @@ config.cache_store = :redis_store, {
 ```
 
 ### Session Storage
+
+If you need session storage, consider directly using
+[redis-actionpack](https://github.com/redis-store/redis-actionpack)
+instead.
 
 You can also store your session data in Redis, keeping user-specific
 data isolated, shared, and highly available. Built upon [redis-rack](https://github.com/redis-store/redis-rack),
