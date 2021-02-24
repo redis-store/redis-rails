@@ -79,7 +79,6 @@ MyApplication::Application.config.session_store :redis_store,
   expire_after: 90.minutes,
   key: "_#{Rails.application.class.parent_name.downcase}_session",
   threadsafe: true,
-  signed: true,
   secure: true
 ```
 
