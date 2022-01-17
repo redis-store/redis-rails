@@ -17,7 +17,7 @@ gemspec
 #   gem "redis-actionpack", ">= 4.0.0", '< 5.1', path: gem_path
 # end
 
-version = ENV["RAILS_VERSION"] || '5'
+version = ENV["RAILS_VERSION"] || '7'
 
 rails = case version
 when "master"
