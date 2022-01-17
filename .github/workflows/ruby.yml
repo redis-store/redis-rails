@@ -46,6 +46,10 @@ jobs:
           - ruby_version: jruby
             gemfile: gemfiles/rails_7.gemfile
 
+          # JRuby is not supported by this Gemfile
+          - ruby_version: jruby
+            gemfile: Gemfile
+
     runs-on: ubuntu-latest
 
     steps:
