@@ -17,6 +17,9 @@ for session management, and
 [redis-rack-cache](https://github.com/redis-store/redis-rack-cache)
 for HTTP cache storage.
 
+**Looking for issues?** You probably want to create an issue for one of
+our other gems. Check this org to find the right one.
+
 ## Installation
 
 Add the following to your Gemfile:
