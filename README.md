@@ -190,7 +190,7 @@ If you are on **Snow Leopard**, run `env ARCHFLAGS="-arch x86_64" bundle exec ra
 ## Status
 
 [![Gem Version](https://badge.fury.io/rb/redis-rails.svg)](http://badge.fury.io/rb/redis-rails)
-[![Ruby](https://github.com/redis-store/redis-rails/actions/workflows/ruby.yml/badge.svg)](https://github.com/redis-store/redis-rails/actions/workflows/ruby.yml)
+[![CI](https://github.com/redis-store/redis-rails/actions/workflows/ruby.yml/badge.svg)](https://github.com/redis-store/redis-rails/actions/workflows/ruby.yml)
 [![Code Climate](https://codeclimate.com/github/redis-store/redis-rails.svg)](https://codeclimate.com/github/redis-store/redis-rails)
 
 ## Copyright
