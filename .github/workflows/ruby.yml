@@ -25,6 +25,11 @@ jobs:
             gemfiles/rails_6.gemfile,
             gemfiles/rails_7.gemfile,
           ]
+        include:
+          - ruby-version: 'truffleruby-head'
+            gemfile: gemfiles/rails_7.gemfile
+          - ruby-version: 'truffleruby-head'
+            gemfile: gemfiles/rails_6.gemfile
         exclude:
           # Ruby 3.1 is not supported by Rails 5.2.x
           - ruby_version: 3.1
