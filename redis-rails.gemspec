@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
-require "redis-rails/version"
+
+require_relative "lib/redis-rails/version"
 
 Gem::Specification.new do |s|
   s.name        = "redis-rails"
@@ -12,18 +12,8 @@ Gem::Specification.new do |s|
   s.description = %q{Redis for Ruby on Rails}
   s.license     = 'MIT'
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  s.require_paths = ["lib"]
+  s.files = `git ls-files`.split("\n")
 
   s.add_dependency "redis-activesupport", [">= 3.0", "< 8"]
   s.add_dependency "redis-actionpack",    [">= 3.0", "< 8"]
-
-  s.add_development_dependency 'rake',     '>= 12.3.3'
-  s.add_development_dependency "bundler",  "~> 2"
-  s.add_development_dependency "mocha",    "~> 0.14.0"
-  s.add_development_dependency "minitest", [">= 4.2", "< 6"]
-  s.add_development_dependency "redis-store-testing"
-  s.add_development_dependency 'appraisal'
 end
