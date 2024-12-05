@@ -23,6 +23,7 @@ jobs:
           - '2.7'
           - jruby
         rails:
+          - rails_8.0
           - rails_7.2
           - rails_7.1
           - rails_7.0
